@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>FORMULARIO DE INSCRIPCION</title>
+  </head>
+  <body>
+    <main class="main">
+      
+      <section class="section newsletter">
+        <div class="newslc container">
+     
+    <h1 class="sectiontitle">FORMULARIO DE INSCRIPCION</h1>
+    <label class="newsld" for="campo1">NOMBRE Y APELLIDO</label>
+    <input class="button22" type="text" id="campo1" name="campo1" required oninput="this.value = this.value.toUpperCase();">
+    <BR></BR>
+    <label class="newsld" for="campo2">CEDULA</label>
+    <input class="button22" type="text" id="campo2" name="campo2" required oninput="this.value = this.value.toUpperCase();">
+    <BR></BR>
+    <label class="newsld" for="campo3">COLEGIO ELECTORAL</label>
+    <input class="button22" type="text" id="campo3" name="campo3" required oninput="this.value = this.value.toUpperCase();">
+    <BR></BR>
+    <label class="newsld" for="campo4">RECINTO ELECTORAL</label>
+    <input class="button22" type="text" id="campo4" name="campo4" required oninput="this.value = this.value.toUpperCase();">
+    <BR></BR>
+    <label class="newsld" for="campo5">TELEFONO</label>
+    <input class="button22" type="text" id="campo5" name="campo5" required oninput="this.value = this.value.toUpperCase();">
+    <BR></BR>
+    <label class="newsld" for="campo6">COORDINADOR</label>
+    <input class="button22" type="text" id="campo6" name="campo6" required oninput="this.value = this.value.toUpperCase();">
+    <BR></BR>
+    <button class="button222" type="button" onclick="prepararMensaje()">ENVIAR MENSAJE</button>       
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function prepararMensaje() {
+        const campo1 = document.getElementById('campo1').value;
+        const campo2 = document.getElementById('campo2').value;
+        const campo3 = document.getElementById('campo3').value;
+        const campo4 = document.getElementById('campo4').value;
+        const campo5 = document.getElementById('campo5').value;
+        const campo6 = document.getElementById('campo6').value;
+  
+        const mensaje = `NOMBRE Y APELLIDO: ${campo1}%0A
+                         CEDULA: ${campo2}%0A
+                         COLEGIO ELECTORAL: ${campo3}%0A
+                         RECINTO ELECTORAL: ${campo4}%0A
+                         TELEFONO: ${campo5}%0A
+                         COORDINADOR: ${campo6}`;
+  
+       
+                       
+        const url = `https://api.whatsapp.com/send?phone=+18096448008&text=${mensaje}`;
+  
+        window.location.href = url;
+      }
+    </script>
+   
+
+    <!--FOOTER-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt scrollupicon"></i>
+    </a>
+
+    <!--JAVASCRIPT-->
+    <script src="js/scrollreveal.min.js"></script>
+
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
